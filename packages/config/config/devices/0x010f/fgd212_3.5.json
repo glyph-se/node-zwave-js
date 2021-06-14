@@ -33,7 +33,7 @@
 	"paramInformation": {
 		"1": {
 			"label": "Minimum brightness level",
-			"description": "set automatically during the calibration",
+			"description": "Set automatically during the calibration",
 			"valueSize": 1,
 			"minValue": 1,
 			"maxValue": 98,
@@ -41,9 +41,9 @@
 		},
 		"2": {
 			"label": "Maximum brightness level",
-			"description": "parameter is set automatically during the calibration process",
+			"description": "Set automatically during the calibration process",
 			"valueSize": 1,
-			"minValue": 1,
+			"minValue": 2,
 			"maxValue": 99,
 			"defaultValue": 99
 		},
@@ -57,14 +57,14 @@
 		},
 		"4": {
 			"label": "Incandescence time of dimmable CFL*",
-			"description": "time required for switching. 0s - 25,5s",
+			"description": "Each step is 100 ms, e.g. 5 = 500 ms",
 			"valueSize": 2,
 			"minValue": 0,
 			"maxValue": 255,
 			"defaultValue": 0
 		},
 		"5": {
-			"label": "Dimming Step at Automatic Control",
+			"label": "Automatic control: Dimming step size",
 			"valueSize": 1,
 			"unit": "%",
 			"minValue": 1,
@@ -72,22 +72,24 @@
 			"defaultValue": 1
 		},
 		"6": {
-			"label": "Dimming Step Timing at Automatic Control",
+			"label": "Automatic control: Dimming step timing",
+			"description": "Each step equals 10 ms, e.g. 5 = 50 ms",
 			"valueSize": 2,
 			"minValue": 0,
 			"maxValue": 255,
 			"defaultValue": 1
 		},
 		"7": {
-			"label": "Dimming Step at Manual Control",
-			"description": "The parameter defines the percentage of a dimming step at manual control. 1-99",
+			"label": "Manual control: Dimming step size",
 			"valueSize": 1,
+			"unit": "%",
 			"minValue": 1,
 			"maxValue": 99,
 			"defaultValue": 1
 		},
 		"8": {
-			"label": "Dimming Step Timing at Manual Control",
+			"label": "Manual control: Dimming step timing",
+			"description": "Each step equals 10 ms, e.g. 5 = 50ms",
 			"valueSize": 2,
 			"minValue": 0,
 			"maxValue": 255,
@@ -98,15 +100,15 @@
 		},
 		"10": {
 			"label": "Timer functionality (auto - off)",
-			"description": "Defines the setting of the timer",
+			"description": "Will automatically turn off after the specified time from switching on (0 = disable)",
 			"valueSize": 2,
+			"unit:" "seconds",
 			"minValue": 0,
 			"maxValue": 32767,
 			"defaultValue": 0
 		},
 		"11": {
 			"label": "ALL ON/ALL OFF function",
-			"description": "The parameter specifies the available functions.",
 			"valueSize": 2,
 			"minValue": 0,
 			"maxValue": 65535,
@@ -134,7 +136,6 @@
 		},
 		"13": {
 			"label": "Force auto-calibration",
-			"description": "Force calibration process",
 			"valueSize": 1,
 			"minValue": 0,
 			"maxValue": 255,
@@ -158,7 +159,6 @@
 		},
 		"14": {
 			"label": "Auto-calibration status (read-only parameter)",
-			"description": "Operating mode of the Dimmer",
 			"valueSize": 1,
 			"minValue": 0,
 			"maxValue": 1,
@@ -171,38 +171,38 @@
 					"value": 0
 				},
 				{
-					"label": "Dimmer operates on auto-calibration settings",
+					"label": "Dimmer operates on auto-calibration",
 					"value": 1
 				}
 			]
 		},
 		"15": {
-			"label": "Burnt out bulb detection",
-			"description": "Percentage value of power variation",
+			"label": "Burnt out bulb detection power variation (LOAD ERROR)",
+			"description": "Percentage value of standard power consumption as measured during calibration, 0 = detection disabled",
 			"valueSize": 1,
 			"minValue": 0,
 			"maxValue": 99,
 			"defaultValue": 30
 		},
 		"16": {
-			"label": "Time delay of a burnt out bulb",
-			"description": "Time of delay for power variation detection",
+			"label": "Burnt out bulb detection time delay (LOAD ERROR)",
+			"description": "0 = detection disabled",
 			"valueSize": 2,
+			"unit:" "seconds",
 			"minValue": 0,
 			"maxValue": 255,
 			"defaultValue": 5
 		},
 		"19": {
 			"label": "Forced switch on brightness level",
-			"description": "Dimmer 2 will always set this brightness level.",
+			"description": "Percentage value, 0 = disabled, previous value is used.",
 			"valueSize": 1,
 			"minValue": 0,
 			"maxValue": 99,
 			"defaultValue": 0
 		},
 		"20": {
-			"label": "Inputs Button/Switch configuration",
-			"description": "Binary inputs type configuration",
+			"label": "Input button/switch configuration",
 			"valueSize": 1,
 			"minValue": 0,
 			"maxValue": 255,
@@ -238,13 +238,13 @@
 					"value": 0
 				},
 				{
-					"label": "Dimmer 2 state synchronizes brightness level",
+					"label": "This dimmers current state synchronizes brightness level",
 					"value": 1
 				}
 			]
 		},
 		"22": {
-			"label": "Change [On-Off] bi-stable keys",
+			"label": "Change bi-stable input",
 			"valueSize": 1,
 			"minValue": 0,
 			"maxValue": 255,
