@@ -38,22 +38,22 @@
 		},
 		"2": {
 			"label": "On/Off (S1)",
-			"description": "On/Off (S1) is assigned to switch connected to the S1 terminal (uses Basic command class)",
+			"description": "Assigned to switch connected to the S1 terminal (uses Basic command class)",
 			"maxNodes": 5
 		},
 		"3": {
 			"label": "Dimmer (S1)",
-			"description": "Dimmer (S1) is assigned to switch connected to the S1 terminal (uses Switch Multilevel command class)",
+			"description": "Assigned to switch connected to the S1 terminal (uses Switch Multilevel command class)",
 			"maxNodes": 5
 		},
 		"4": {
 			"label": "On/Off (S2)",
-			"description": "On/Off (S2) is assigned to switch connected to the S2 terminal (uses Basic command class)",
+			"description": "Assigned to switch connected to the S2 terminal (uses Basic command class)",
 			"maxNodes": 5
 		},
 		"5": {
 			"label": "Dimmer (S2)",
-			"description": "Dimmer (S2) is assigned to switch connected to the S2 terminal (uses Switch Multilevel command class)",
+			"description": "Assigned to switch connected to the S2 terminal (uses Switch Multilevel command class)",
 			"maxNodes": 5
 		}
 	},
@@ -62,8 +62,7 @@
 			"$import": "../templates/master_template.json#state_after_power_failure_off_prev"
 		},
 		"10": {
-			"label": "First channel - operating mode",
-			"description": "This parameter allows to choose operating for the 1st channel controlled by the S1 switch.",
+			"label": "First Channel - Operating Mode",
 			"valueSize": 1,
 			"minValue": 0,
 			"maxValue": 5,
@@ -98,8 +97,7 @@
 			]
 		},
 		"11": {
-			"label": "First channel - reaction to switch for delay/auto ON/OFF modes",
-			"description": "This parameter determines how the device in timed mode reacts to pushing the switch connected to the S1 terminal.",
+			"label": "First Channel - Reaction to Key S1 for Delay/Auto ON/OFF Modes",
 			"valueSize": 1,
 			"minValue": 0,
 			"maxValue": 2,
@@ -122,18 +120,22 @@
 			]
 		},
 		"12": {
-			"label": "First channel - time parameter for delay/auto ON/OFF modes",
-			"description": "This parameter allows to set time parameter used in timed modes.",
+			"label": "First channel - Time Parameter for Delay/Auto ON/OFF Modes",
 			"valueSize": 2,
 			"unit": "seconds",
-			"minValue": 1,
+			"minValue": 0,
 			"maxValue": 32000,
 			"defaultValue": 50,
-			"unsigned": true
+			"unsigned": true,
+			"options": [
+				{
+					"label": "0.1 seconds",
+					"value": 0
+				}
+			]
 		},
 		"13": {
-			"label": "First channel - pulse time for flashing mode",
-			"description": "This parameter allows to set time of switching to opposite state in flashing mode.",
+			"label": "First Channel - Pulse Time for Flashing Mode",
 			"valueSize": 2,
 			"unit": "0.1 seconds",
 			"minValue": 1,
@@ -142,8 +144,7 @@
 			"unsigned": true
 		},
 		"15": {
-			"label": "Second channel - operating mode",
-			"description": "This parameter allows to choose operating for the 2nd channel controlled by the S2 switch.",
+			"label": "Second channel - Operating Mode",
 			"valueSize": 1,
 			"minValue": 0,
 			"maxValue": 5,
@@ -178,8 +179,7 @@
 			]
 		},
 		"16": {
-			"label": "Second channel - reaction to switch for delay/auto ON/OFF modes",
-			"description": "This parameter determines how the device in timed mode reacts to pushing the switch connected to the S2 terminal.",
+			"label": "Second channel - Reaction to Key S2 for Delay/Auto ON/OFF Modes",
 			"valueSize": 1,
 			"unit": "seconds",
 			"minValue": 0,
@@ -203,27 +203,32 @@
 			]
 		},
 		"17": {
-			"label": "Second channel - time parameter for delay/auto ON/OFF modes",
+			"label": "Second Channel - Time Parameter for Delay/Auto ON/OFF Modes",
 			"description": "This parameter allows to set time parameter used in timed modes.",
 			"valueSize": 2,
-			"unit": "0.1 seconds",
-			"minValue": 1,
+			"unit": "1 seconds",
+			"minValue": 0,
 			"maxValue": 32000,
 			"defaultValue": 50,
-			"unsigned": true
+			"unsigned": true,
+			"options": [
+				{
+					"label": "0.1 seconds",
+					"value": 0
+				}
+			]
 		},
 		"18": {
-			"label": "Second channel - pulse time for flashing mode",
-			"description": "This parameter allows to set time of switching to opposite state in flashing mode.",
+			"label": "Second channel - Pulse Time for Flashing Mode",
 			"valueSize": 2,
+			"unit": "0.1 seconds",
 			"minValue": 1,
 			"maxValue": 32000,
 			"defaultValue": 5,
 			"unsigned": true
 		},
 		"20": {
-			"label": "Switch type",
-			"description": "Inputs type configuration",
+			"label": "Input Button/Switch Configuration",
 			"valueSize": 1,
 			"minValue": 0,
 			"maxValue": 2,
@@ -232,15 +237,15 @@
 			"allowManualEntry": false,
 			"options": [
 				{
-					"label": "Momentary switch",
+					"label": "Momentary",
 					"value": 0
 				},
 				{
-					"label": "Toggle switch (contact closed - ON, contact opened - OFF)",
+					"label": "Switch with contact closed => ON and contact opened => OFF",
 					"value": 1
 				},
 				{
-					"label": "Toggle switch (device changes status when switch changes status)",
+					"label": "Switch with device status changing each time switch changes",
 					"value": 2
 				}
 			]
@@ -705,5 +710,11 @@
 				}
 			]
 		}
+	},
+	"metadata": {
+		"inclusion": "Turn the primary controller of Z-Wave network into inclusion mode, quickly press key S1 or B-button on product's housing three times",
+		"exclusion": "Turn the primary controller of Z-Wave network into exclusion mode, quickly press key S1 or B-button on product's housing three times",
+		"reset": "1. Power-cycle the device\n2. Press and hold the B-button to enter the menu\n3. Wait for the LED to turn yellow\n4. Quickly release and click B-button again\n5. Device will restart and LED will turn red",
+		"manual": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=MarketCertificationFiles/1742/FGS-2x3-EN-T-v1.0%2006.06.2016.pdf"
 	}
 }

@@ -29,6 +29,34 @@
 		"min": "3.5",
 		"max": "255.255"
 	},
+	"associations": {
+		"1": {
+			"label": "Lifeline",
+			"description": "Reports the device status and allows for assigning single device only (main controller by default).",
+			"maxNodes": 1,
+			"isLifeline": true
+		},
+		"2": {
+			"label": "On/Off (S1)",
+			"description": "Assigned to switch connected to the S1 terminal (uses Basic command class)",
+			"maxNodes": 5
+		},
+		"3": {
+			"label": "Dimmer (S1)",
+			"description": "Assigned to switch connected to the S1 terminal (uses Switch Multilevel command class)",
+			"maxNodes": 5
+		},
+		"4": {
+			"label": "On/Off (S2)",
+			"description": "Assigned to switch connected to the S2 terminal (uses Basic command class)",
+			"maxNodes": 5
+		},
+		"5": {
+			"label": "Dimmer (S2)",
+			"description": "Assigned to switch connected to the S2 terminal (uses Switch Multilevel command class)",
+			"maxNodes": 5
+		}
+	},
 	"paramInformation": {
 		"1": {
 			"label": "Minimum Brightness Level",
@@ -172,11 +200,11 @@
 			"allowManualEntry": false,
 			"options": [
 				{
-					"label": "No calibration or manual settings",
+					"label": "No calibration or manual override",
 					"value": 0
 				},
 				{
-					"label": "Dimmer operates on auto-calibration",
+					"label": "Using auto-calibration",
 					"value": 1
 				}
 			]
@@ -413,7 +441,7 @@
 		},
 		"32": {
 			"label": "On/Off Mode",
-			"description": "Mode for connecting non-dimmable light sources.",
+			"description": "Useful when connecting non-dimmable light sources.",
 			"valueSize": 1,
 			"minValue": 0,
 			"maxValue": 2,
@@ -488,7 +516,7 @@
 			"allowManualEntry": false,
 			"options": [
 				{
-					"label": "Never",
+					"label": "Never (unless manually triggered)",
 					"value": 0
 				},
 				{
@@ -852,8 +880,8 @@
 		}
 	},
 	"metadata": {
-		"inclusion": "Turn the primary controller of Z-Wave network into inclusion mode, quickly press key S1 or B-button product's housing three times",
-		"exclusion": "Turn the primary controller of Z-Wave network into exclusion mode, quickly press key S1 or B-button product's housing three times",
+		"inclusion": "Turn the primary controller of Z-Wave network into inclusion mode, quickly press key S1 or B-button on product's housing three times",
+		"exclusion": "Turn the primary controller of Z-Wave network into exclusion mode, quickly press key S1 or B-button on product's housing three times",
 		"reset": "1. Power-cycle the device\n2. Press and hold the B-button to enter the menu\n3. Wait for the LED to turn yellow\n4. Quickly release and click B-button again\n5. Device will restart and LED will turn red",
 		"manual": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=MarketCertificationFiles/2836/FGD-212-EN-T-v1.3.pdf"
 	}
