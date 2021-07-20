@@ -66,7 +66,7 @@ export type ParamInfoMap = ReadonlyObjectKeyMap<
 	ParamInformation
 >;
 
-const embeddedDevicesDir = path.join(configDir, "devices");
+export const embeddedDevicesDir = path.join(configDir, "devices");
 const fulltextIndexPath = path.join(embeddedDevicesDir, "fulltext_index.json");
 
 function getDevicesPaths(configDir: string): {
@@ -363,7 +363,10 @@ export class ConditionalDeviceConfig {
 		const relativePath = relativeTo
 			? path.relative(relativeTo, filename).replace(/\\/g, "/")
 			: filename;
-		const json = await readJsonWithTemplate(filename);
+		const json = await readJsonWithTemplate(
+			filename,
+			relativeTo ?? embeddedDevicesDir,
+		);
 		return new ConditionalDeviceConfig(relativePath, json);
 	}
 
@@ -896,16 +899,16 @@ isLifeline in association ${groupId} must be a boolean`,
 
 		if (
 			definition.multiChannel != undefined &&
-			definition.multiChannel !== false
+			typeof definition.multiChannel !== "boolean"
 		) {
 			throwInvalidConfig(
 				"devices",
 				`packages/config/config/devices/${filename}:
-multiChannel in association ${groupId} must be either false or left out`,
+multiChannel in association ${groupId} must be a boolean`,
 			);
 		}
-		// Default to multi channel associations
-		this.multiChannel = definition.multiChannel ?? true;
+		// Default to the "auto" strategy
+		this.multiChannel = definition.multiChannel ?? "auto";
 	}
 
 	public readonly condition?: string;
@@ -919,8 +922,14 @@ multiChannel in association ${groupId} must be either false or left out`,
 	 * While Z-Wave+ defines a single lifeline, older devices may have multiple lifeline associations.
 	 */
 	public readonly isLifeline: boolean;
-	/** Some devices support multi channel associations but require some of its groups to use node id associations */
-	public readonly multiChannel: boolean;
+	/**
+	 * Controls the strategy of setting up lifeline associations:
+	 *
+	 * * `true` - Use a multi channel association (if possible)
+	 * * `false` - Use a node association (if possible)
+	 * * `"auto"` - Prefer node associations, fall back to multi channel associations
+	 */
+	public readonly multiChannel: boolean | "auto";
 
 	public evaluateCondition(
 		deviceId?: DeviceID,
