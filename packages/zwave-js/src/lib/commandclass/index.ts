@@ -182,6 +182,7 @@ export {
 	FirmwareUpdateRequestStatus,
 	FirmwareUpdateStatus,
 } from "./FirmwareUpdateMetaDataCC";
+export type { FirmwareUpdateCapabilities } from "./FirmwareUpdateMetaDataCC";
 export { HailCC } from "./HailCC";
 export {
 	IndicatorCC,
@@ -437,6 +438,14 @@ export {
 	TimeParametersCCReport,
 	TimeParametersCCSet,
 } from "./TimeParametersCC";
+export {
+	TransportServiceCC,
+	TransportServiceCCFirstSegment,
+	TransportServiceCCSegmentComplete,
+	TransportServiceCCSegmentRequest,
+	TransportServiceCCSegmentWait,
+	TransportServiceCCSubsequentSegment,
+} from "./TransportServiceCC";
 export {
 	KeypadMode,
 	UserCodeCC,
