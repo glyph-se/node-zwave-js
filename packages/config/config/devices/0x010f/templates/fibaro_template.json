@@ -167,8 +167,7 @@
 			}
 		]
 	},
-	"alarm_state_time":
-	{
+	"alarm_state_time": {
 		"label": "Time of Alarm State",
 		"valueSize": 2,
 		"unit:": "seconds",
@@ -179,16 +178,16 @@
 	"active_power_report_threshold": {
 		"label": "Active Power Report: Threshold",
 		"description": "Relative change since previous report sent",
-			"valueSize": 1,
-			"unit": "%",
-			"minValue": 0,
-			"maxValue": 100,
-			"options": [
-				{
-					"label": "Disable",
-					"value": 0
-				}
-			]
+		"valueSize": 1,
+		"unit": "%",
+		"minValue": 0,
+		"maxValue": 100,
+		"options": [
+			{
+				"label": "Disable",
+				"value": 0
+			}
+		]
 	},
 	"energy_report_threshold": {
 		"label": "Energy Reports: Threshold",
