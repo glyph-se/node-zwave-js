@@ -37,23 +37,23 @@
 			"isLifeline": true
 		},
 		"2": {
-			"label": "On/Off (S1)",
-			"description": "Assigned to switch connected to the S1 terminal (uses Basic command class)",
+			"label": "Key S1 - On/Off",
+			"description": "Assigned to Key S1 (uses basic command class)",
 			"maxNodes": 5
 		},
 		"3": {
-			"label": "Dimmer (S1)",
-			"description": "Assigned to switch connected to the S1 terminal (uses Switch Multilevel command class)",
+			"label": "Key S1 - Dimmer",
+			"description": "Assigned to Key S1 (uses multilevel switch command class)",
 			"maxNodes": 5
 		},
 		"4": {
-			"label": "On/Off (S2)",
-			"description": "Assigned to switch connected to the S2 terminal (uses Basic command class)",
+			"label": "Key S2 - On/Off",
+			"description": "Assigned to Key S2 (uses basic command class)",
 			"maxNodes": 5
 		},
 		"5": {
-			"label": "Dimmer (S2)",
-			"description": "Assigned to switch connected to the S2 terminal (uses Switch Multilevel command class)",
+			"label": "Key S2 - Dimmer",
+			"description": "Assigned to Key S2 (uses multilevel switch command class)",
 			"maxNodes": 5
 		}
 	},
@@ -241,170 +241,79 @@
 					"value": 0
 				},
 				{
-					"label": "Switch with contact closed => ON and contact opened => OFF",
+					"label": "Switch (contact closed => ON and contact opened => OFF)",
 					"value": 1
 				},
 				{
-					"label": "Switch with device status changing each time switch changes",
+					"label": "Switch (device status changing each time switch changes)",
 					"value": 2
 				}
 			]
 		},
 		"21": {
-			"label": "Flashing mode report",
-			"description": "Enabled / Disabled reports on Flashing mode",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true,
-			"allowManualEntry": false,
-			"options": [
-				{
-					"label": "Disabled",
-					"value": 0
-				},
-				{
-					"label": "Enabled",
-					"value": 1
-				}
-			]
+			"$import": "../templates/master_template.json#base_enable_disable",
+			"label": "Report During Flashing",
 		},
 		"27[0x01]": {
-			"label": "Associations: Send secure commands to 2nd group",
-			"description": "This is only active when the node is included securely",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 1,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#send_secure_commands_group2"
 		},
 		"27[0x02]": {
-			"label": "Associations: Send secure commands to 3rd group",
-			"description": "This is only active when the node is included securely",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 1,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#send_secure_commands_group3"
 		},
 		"27[0x04]": {
-			"label": "Associations: Send secure commands to 4th group",
-			"description": "This is only active when the node is included securely",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 1,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#send_secure_commands_group4"
 		},
 		"27[0x08]": {
-			"label": "Associations: Send secure commands to 5th group",
-			"description": "This is only active when the node is included securely",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 1,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#send_secure_commands_group5"
 		},
 		"28[0x01]": {
-			"label": "S1 switch - Send Scenes: Key pressed 1 time",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "../templates/master_template.json#base_enable_disable",
+			"label": "Key S1: Send Scenes When Pressed 1 Time"
 		},
 		"28[0x02]": {
-			"label": "S1 switch - Send Scenes: Key pressed 2 times",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "../templates/master_template.json#base_enable_disable",
+			"label": "Key S1: Send Scenes When Pressed 2 Times"
 		},
 		"28[0x04]": {
-			"label": "S1 switch - Send Scenes: Key pressed 3 times",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "../templates/master_template.json#base_enable_disable",
+			"label": "Key S1: Send Scenes When Pressed 3 Times"
 		},
 		"28[0x08]": {
-			"label": "S1 switch - Send Scenes: Key held down and Key released",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "../templates/master_template.json#base_enable_disable",
+			"label": "Key S1: Send Scenes When Held Down and Released"
 		},
 		"29[0x01]": {
-			"label": "S2 switch - Send Scenes: Key pressed 1 time",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "../templates/master_template.json#base_enable_disable",
+			"label": "Key S2: Send Scenes When Pressed 1 Time"
 		},
 		"29[0x02]": {
-			"label": "S2 switch - Send Scenes: Key pressed 2 times",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "../templates/master_template.json#base_enable_disable",
+			"label": "Key S2: Send Scenes When Pressed 2 Times"
 		},
 		"29[0x04]": {
-			"label": "S2 switch - Send Scenes: Key pressed 3 times",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "../templates/master_template.json#base_enable_disable",
+			"label": "Key S2: Send Scenes When Pressed 3 Times"
 		},
 		"29[0x08]": {
-			"label": "S2 switch - Send Scenes: Key held down and Key released",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "../templates/master_template.json#base_enable_disable",
+			"label": "Key S2: Send Scenes When Held Down and Released"
 		},
 		"30[0x01]": {
-			"label": "S1 switch associations - Ignore turning ON with 1 click",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#send_s1_associations_on"
 		},
 		"30[0x02]": {
-			"label": "S1 switch associations - Ignore turning OFF with 1 click",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#send_s1_associations_off"
 		},
 		"30[0x04]": {
-			"label": "S1 switch associations - Ignore holding and releasing",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#send_s1_associations_hold_release",
+			"description": "Reuqires Key S1 to be configured as momentary"
 		},
 		"30[0x08]": {
-			"label": "S1 switch associations - Ignore double click",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#send_s1_associations_double_click",
+			"description": "Reuqires Key S1 to be configured as momentary or to change each time input changes"
 		},
 		"31": {
-			"label": "S1 Switch ON value sent to 2nd and 3rd association groups",
-			"description": "This parameter determines value sent with Switch On command to devices associated in 2nd and 3rd association group.",
+			"label": "Key S1 Associations: Switch ON Value Sent",
 			"valueSize": 2,
 			"minValue": 0,
 			"maxValue": 255,
@@ -412,8 +321,7 @@
 			"unsigned": true
 		},
 		"32": {
-			"label": "S1 Switch OFF value sent to 2nd and 3rd association groups",
-			"description": "This parameter determines value sent with Switch Off command to devices associated in 2nd and 3rd association group.",
+			"label": "Key S1 Associations: Switch OFF Value Sent",
 			"valueSize": 2,
 			"minValue": 0,
 			"maxValue": 255,
@@ -421,8 +329,7 @@
 			"unsigned": true
 		},
 		"33": {
-			"label": "S1 Switch Double Click value sent to 2nd and 3rd association groups",
-			"description": "This parameter determines value sent with Double Click command to devices associated in 2nd and 3rd association group.",
+			"label": "Key S1 Associations: Double Click Value Sent",
 			"valueSize": 2,
 			"minValue": 0,
 			"maxValue": 255,
@@ -430,40 +337,21 @@
 			"unsigned": true
 		},
 		"35[0x01]": {
-			"label": "S2 switch associations - Ignore turning ON with 1 click",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#send_s2_associations_on"
 		},
 		"35[0x02]": {
-			"label": "S2 switch associations - Ignore turning OFF with 1 click",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#send_s2_associations_off"
 		},
 		"35[0x04]": {
-			"label": "S2 switch associations - Ignore holding and releasing",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#send_s2_associations_hold_release",
+			"description": "Reuqires Key S1 to be configured as momentary"
 		},
 		"35[0x08]": {
-			"label": "S2 switch associations - Ignore double click",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#send_s2_associations_double_click",
+			"description": "Reuqires Key S1 to be configured as momentary or to change each time input changes"
 		},
 		"36": {
-			"label": "S2 Switch ON value sent to 4th and 5th association groups",
-			"description": "This parameter determines value sent with Switch On command to devices associated in 4th and 5th association group.",
+			"label": "Key S2 Associations: Switch ON Value Sent",
 			"valueSize": 2,
 			"minValue": 0,
 			"maxValue": 255,
@@ -471,8 +359,7 @@
 			"unsigned": true
 		},
 		"37": {
-			"label": "S2 Switch OFF value sent to 4th and 5th association groups",
-			"description": "This parameter determines value sent with Switch Off command to devices associated in 4th and 5th association group.",
+			"label": "Key S2 Associations: Switch OFF Value Sent",
 			"valueSize": 2,
 			"minValue": 0,
 			"maxValue": 255,
@@ -480,8 +367,7 @@
 			"unsigned": true
 		},
 		"38": {
-			"label": "S2 Switch Double Click value sent to 4th and 5th association groups",
-			"description": "This parameter determines value sent with Double Click command to devices associated in 4th and 5th association group.",
+			"label": "Key S2 Associations: Double Click Value Sent",
 			"valueSize": 2,
 			"minValue": 0,
 			"maxValue": 255,
@@ -489,141 +375,28 @@
 			"unsigned": true
 		},
 		"40": {
-			"label": "Reaction to General Alarm",
-			"description": "This parameter determines how the device will react to General Alarm frame.",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 3,
-			"defaultValue": 3,
-			"unsigned": true,
-			"allowManualEntry": false,
-			"options": [
-				{
-					"label": "Ignored",
-					"value": 0
-				},
-				{
-					"label": "Turn On",
-					"value": 1
-				},
-				{
-					"label": "Turn OFF",
-					"value": 2
-				},
-				{
-					"label": "Flash",
-					"value": 3
-				}
-			]
+			"$import": "templates/fibaro_template.json#general_purpose_alarm_response"
 		},
 		"41": {
-			"label": "Reaction to Flood Alarm",
-			"description": "This parameter determines how the device will react to Flood Alarm frame.",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 3,
-			"defaultValue": 2,
-			"unsigned": true,
-			"allowManualEntry": false,
-			"options": [
-				{
-					"label": "Ignored",
-					"value": 0
-				},
-				{
-					"label": "Turn On",
-					"value": 1
-				},
-				{
-					"label": "Turn OFF",
-					"value": 2
-				},
-				{
-					"label": "Flash",
-					"value": 3
-				}
-			]
+			"$import": "templates/fibaro_template.json#water_flooding_alarm_response"
 		},
 		"42": {
-			"label": "Reaction to CO/CO2/Smoke Alarm",
-			"description": "This parameter determines how the device will react to CO/CO2/Smoke Alarm frame.",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 3,
-			"defaultValue": 3,
-			"unsigned": true,
-			"allowManualEntry": false,
-			"options": [
-				{
-					"label": "Ignored",
-					"value": 0
-				},
-				{
-					"label": "Turn On",
-					"value": 1
-				},
-				{
-					"label": "Turn OFF",
-					"value": 2
-				},
-				{
-					"label": "Flash",
-					"value": 3
-				}
-			]
+			"$import": "templates/fibaro_template.json#smoke_alarm_response"
 		},
 		"43": {
-			"label": "Reaction to Heat Alarm",
-			"description": "This parameter determines how the device will react to Heat alarm frame.",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 3,
-			"defaultValue": 1,
-			"unsigned": true,
-			"allowManualEntry": false,
-			"options": [
-				{
-					"label": "Ignored",
-					"value": 0
-				},
-				{
-					"label": "Turn On",
-					"value": 1
-				},
-				{
-					"label": "Turn OFF",
-					"value": 2
-				},
-				{
-					"label": "Flash",
-					"value": 3
-				}
-			]
+			"$import": "templates/fibaro_template.json#temperature_alarm_response"
 		},
 		"44": {
-			"label": "Flashing alarm duration",
-			"description": "This parameter allows to set duration of flashing alarm mode.",
-			"valueSize": 2,
-			"unit": "seconds",
-			"minValue": 1,
-			"maxValue": 32000,
-			"defaultValue": 600,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#alarm_state_time"
 		},
 		"50": {
-			"label": "First channel - power reports",
-			"description": "This parameter determines the minimum change in consumed power that will result in sending new power report to the main controller.",
-			"valueSize": 2,
-			"unit": "%",
-			"minValue": 1,
-			"maxValue": 100,
+			"$import": "templates/fibaro_template.json#active_power_report_threshold",
 			"defaultValue": 20,
-			"unsigned": true
+			"label": "First Channel - Active Power Report: Threshold"
 		},
 		"51": {
-			"label": "First channel - minimal time between power reports",
-			"description": "This parameter determines minimum time that has to elapse before sending new power report to the main controller.",
-			"valueSize": 2,
+			"label": "First Channel - Active Power Report: Minimum Time Between Reports",
+			"valueSize": 1,
 			"unit": "seconds",
 			"minValue": 1,
 			"maxValue": 120,
@@ -631,29 +404,19 @@
 			"unsigned": true
 		},
 		"53": {
-			"label": "First channel - energy reports",
-			"description": "This parameter determines the minimum change in consumed energy that will result in sending new energy report to the main controller.",
-			"valueSize": 2,
-			"unit": "0.01 kWh",
-			"minValue": 1,
+			"$import": "templates/fibaro_template.json#energy_report_threshold",
 			"maxValue": 32000,
 			"defaultValue": 100,
-			"unsigned": true
+			"label": "First Channel - Energy Reports: Threshold"
 		},
 		"54": {
-			"label": "Second Channel - power reports",
-			"description": "This parameter determines the minimum change in consumed power that will result in sending new power report to the main controller.",
-			"valueSize": 2,
-			"unit": "%",
-			"minValue": 1,
-			"maxValue": 100,
+			"$import": "templates/fibaro_template.json#active_power_report_threshold",
 			"defaultValue": 20,
-			"unsigned": true
+			"label": "Second Channel - Active Power Report: Threshold"
 		},
 		"55": {
-			"label": "Second channel - minimal time between power reports",
-			"description": "This parameter determines minimum time that has to elapse before sending new power report to the main controller.",
-			"valueSize": 2,
+			"label": "Second Channel - Active Power Report: Minimum Time Between Reports",
+			"valueSize": 1,
 			"unit": "seconds",
 			"minValue": 1,
 			"maxValue": 120,
@@ -661,54 +424,23 @@
 			"unsigned": true
 		},
 		"57": {
-			"label": "Second channel - energy reports",
-			"description": "This parameter determines the minimum change in consumed energy that will result in sending new energy report to the main controller.",
-			"valueSize": 2,
-			"unit": "0.01 kWh",
-			"minValue": 1,
+			"$import": "templates/fibaro_template.json#energy_report_threshold",
 			"maxValue": 32000,
 			"defaultValue": 100,
-			"unsigned": true
+			"label": "Second Channel - Energy Reports: Threshold"
 		},
 		"58": {
-			"label": "Periodic power reports",
-			"description": "This parameter determines in what time interval the periodic power reports are sent to the main controller.",
-			"valueSize": 2,
-			"unit": "seconds",
-			"minValue": 1,
-			"maxValue": 32000,
-			"defaultValue": 3600,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#reports_periodic",
+			"label": "Periodic Active Power Reports",
+			"maxValue": 32000
 		},
 		"59": {
-			"label": "Periodic energy reports",
-			"description": "This parameter determines in what time interval the periodic power reports are sent to the main controller.",
-			"valueSize": 2,
-			"unit": "seconds",
-			"minValue": 1,
-			"maxValue": 32000,
-			"defaultValue": 3600,
-			"unsigned": true
+			"$import": "templates/fibaro_template.json#reports_periodic",
+			"label": "Periodic Energy Reports",
+			"maxValue": 32000
 		},
 		"60": {
-			"label": "Measuring energy consumed by the device itself",
-			"description": "This parameter determines whether energy metering should include the amount of energy consumed by the device itself. Results are being added to energy reports for first endpoint.",
-			"valueSize": 1,
-			"minValue": 0,
-			"maxValue": 1,
-			"defaultValue": 0,
-			"unsigned": true,
-			"allowManualEntry": false,
-			"options": [
-				{
-					"label": "function inactive",
-					"value": 0
-				},
-				{
-					"label": "function active",
-					"value": 1
-				}
-			]
+			"$import": "templates/fibaro_template.json#reports_include_self"
 		}
 	},
 	"metadata": {
