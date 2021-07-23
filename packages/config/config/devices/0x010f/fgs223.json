@@ -205,7 +205,7 @@
 		"17": {
 			"label": "Second Channel - Time Parameter for Delay/Auto ON/OFF Modes",
 			"valueSize": 2,
-			"unit": "1 seconds",
+			"unit": "seconds",
 			"minValue": 0,
 			"maxValue": 32000,
 			"defaultValue": 50,
@@ -240,30 +240,34 @@
 					"value": 0
 				},
 				{
-					"label": "Switch (status synced with switch position)",
+					"label": "Switch (status syncs with switch position)",
 					"value": 1
 				},
 				{
-					"label": "Switch (status changed when switch change)",
+					"label": "Switch (status changes when switch change)",
 					"value": 2
 				}
 			]
 		},
 		"21": {
 			"$import": "~/templates/master_template.json#base_enable_disable",
-			"label": "Report During Blink"
+			"label": "Report During Blink Mode"
 		},
 		"27[0x01]": {
-			"$import": "templates/fibaro_template.json#send_secure_commands_group2"
+			"$import": "templates/fibaro_template.json#send_secure_commands_group2",
+			"defaultValue": 1
 		},
 		"27[0x02]": {
-			"$import": "templates/fibaro_template.json#send_secure_commands_group3"
+			"$import": "templates/fibaro_template.json#send_secure_commands_group3",
+			"defaultValue": 1
 		},
 		"27[0x04]": {
-			"$import": "templates/fibaro_template.json#send_secure_commands_group4"
+			"$import": "templates/fibaro_template.json#send_secure_commands_group4",
+			"defaultValue": 1
 		},
 		"27[0x08]": {
-			"$import": "templates/fibaro_template.json#send_secure_commands_group5"
+			"$import": "templates/fibaro_template.json#send_secure_commands_group5",
+			"defaultValue": 1
 		},
 		"28[0x01]": {
 			"$import": "~/templates/master_template.json#base_enable_disable",
@@ -343,11 +347,11 @@
 		},
 		"35[0x04]": {
 			"$import": "templates/fibaro_template.json#send_s2_associations_hold_release",
-			"description": "Reuqires Key S1 to be configured as momentary"
+			"description": "Reuqires Key S2 to be configured as momentary"
 		},
 		"35[0x08]": {
 			"$import": "templates/fibaro_template.json#send_s2_associations_double_click",
-			"description": "Reuqires Key S1 to be configured as momentary or to change each time input changes"
+			"description": "Reuqires Key S2 to be configured as momentary or to change each time input changes"
 		},
 		"36": {
 			"label": "Key S2 Associations: Switch ON Value Sent",
@@ -377,7 +381,7 @@
 			"$import": "templates/fibaro_template.json#general_purpose_alarm_response"
 		},
 		"41": {
-			"$import": "templates/fibaro_template.json#water_flooding_alarm_response"
+			"$import": "templates/fibaro_template.json#water_flood_alarm_response"
 		},
 		"42": {
 			"$import": "templates/fibaro_template.json#smoke_alarm_response"
@@ -386,7 +390,8 @@
 			"$import": "templates/fibaro_template.json#temperature_alarm_response"
 		},
 		"44": {
-			"$import": "templates/fibaro_template.json#alarm_state_time"
+			"$import": "templates/fibaro_template.json#alarm_state_time",
+			"maxValue": 32000
 		},
 		"50": {
 			"$import": "templates/fibaro_template.json#active_power_report_threshold",
@@ -397,10 +402,16 @@
 			"label": "First Channel - Active Power Report: Minimum Time Between Reports",
 			"valueSize": 1,
 			"unit": "seconds",
-			"minValue": 1,
+			"minValue": 0,
 			"maxValue": 120,
 			"defaultValue": 10,
-			"unsigned": true
+			"unsigned": true,
+			"options": [
+				{
+					"label": "Disable",
+					"value": 0
+				}
+			]
 		},
 		"53": {
 			"$import": "templates/fibaro_template.json#energy_report_threshold",
@@ -417,10 +428,16 @@
 			"label": "Second Channel - Active Power Report: Minimum Time Between Reports",
 			"valueSize": 1,
 			"unit": "seconds",
-			"minValue": 1,
+			"minValue": 0,
 			"maxValue": 120,
 			"defaultValue": 10,
-			"unsigned": true
+			"unsigned": true,
+			"options": [
+				{
+					"label": "Disable",
+					"value": 0
+				}
+			]
 		},
 		"57": {
 			"$import": "templates/fibaro_template.json#energy_report_threshold",
@@ -439,7 +456,8 @@
 			"maxValue": 32000
 		},
 		"60": {
-			"$import": "templates/fibaro_template.json#reports_include_self"
+			"$import": "templates/fibaro_template.json#reports_include_self",
+			"description": "If enabled, it will be included in the reports for the first channel"
 		}
 	},
 	"metadata": {

@@ -308,7 +308,7 @@
 					"value": 0
 				},
 				{
-					"label": "Output synced with input switch position",
+					"label": "Output syncs with input switch position",
 					"value": 1
 				}
 			]
@@ -356,16 +356,20 @@
 			"description": "Key S2 also controls the dimmer"
 		},
 		"27[0x01]": {
-			"$import": "templates/fibaro_template.json#send_secure_commands_group2"
+			"$import": "templates/fibaro_template.json#send_secure_commands_group2",
+			"defaultValue": 1
 		},
 		"27[0x02]": {
-			"$import": "templates/fibaro_template.json#send_secure_commands_group3"
+			"$import": "templates/fibaro_template.json#send_secure_commands_group3",
+			"defaultValue": 1
 		},
 		"27[0x04]": {
-			"$import": "templates/fibaro_template.json#send_secure_commands_group4"
+			"$import": "templates/fibaro_template.json#send_secure_commands_group4",
+			"defaultValue": 1
 		},
 		"27[0x08]": {
-			"$import": "templates/fibaro_template.json#send_secure_commands_group5"
+			"$import": "templates/fibaro_template.json#send_secure_commands_group5",
+			"defaultValue": 1
 		},
 		"28": {
 			"$import": "~/templates/master_template.json#base_enable_disable",
@@ -567,7 +571,7 @@
 			"$import": "templates/fibaro_template.json#general_purpose_alarm_response"
 		},
 		"41": {
-			"$import": "templates/fibaro_template.json#water_flooding_alarm_response"
+			"$import": "templates/fibaro_template.json#water_flood_alarm_response"
 		},
 		"42": {
 			"$import": "templates/fibaro_template.json#smoke_alarm_response"
@@ -576,7 +580,8 @@
 			"$import": "templates/fibaro_template.json#temperature_alarm_response"
 		},
 		"44": {
-			"$import": "templates/fibaro_template.json#alarm_state_time"
+			"$import": "templates/fibaro_template.json#alarm_state_time",
+			"maxValue": 32767
 		},
 		"45": {
 			"label": "Power Limit Alarm Report",
