@@ -71,27 +71,27 @@
 			"allowManualEntry": false,
 			"options": [
 				{
-					"label": "Standard operation",
+					"label": "Standard",
 					"value": 0
 				},
 				{
-					"label": "Delay ON",
+					"label": "Delay turn ON",
 					"value": 1
 				},
 				{
-					"label": "Delay OFF",
+					"label": "Delay turn OFF",
 					"value": 2
 				},
 				{
-					"label": "Auto ON",
+					"label": "Automatically turn ON",
 					"value": 3
 				},
 				{
-					"label": "Auto OFF",
+					"label": "Automatically turn OFF",
 					"value": 4
 				},
 				{
-					"label": "Flashing Mode",
+					"label": "Blink",
 					"value": 5
 				}
 			]
@@ -106,21 +106,21 @@
 			"allowManualEntry": false,
 			"options": [
 				{
-					"label": "Cancel mode and set target state",
+					"label": "Cancel and set target state",
 					"value": 0
 				},
 				{
-					"label": "No reaction to switch - mode runs until it ends",
+					"label": "Ignore - mode runs until it ends",
 					"value": 1
 				},
 				{
-					"label": "Reset timer - start counting from the beginning",
+					"label": "Reset - start time from the beginning",
 					"value": 2
 				}
 			]
 		},
 		"12": {
-			"label": "First channel - Time Parameter for Delay/Auto ON/OFF Modes",
+			"label": "First Channel - Time Parameter for Delay/Auto ON/OFF Modes",
 			"valueSize": 2,
 			"unit": "seconds",
 			"minValue": 0,
@@ -135,7 +135,7 @@
 			]
 		},
 		"13": {
-			"label": "First Channel - Pulse Time for Flashing Mode",
+			"label": "First Channel - Pulse Time for Blink Mode",
 			"valueSize": 2,
 			"unit": "0.1 seconds",
 			"minValue": 1,
@@ -144,7 +144,7 @@
 			"unsigned": true
 		},
 		"15": {
-			"label": "Second channel - Operating Mode",
+			"label": "Second Channel - Operating Mode",
 			"valueSize": 1,
 			"minValue": 0,
 			"maxValue": 5,
@@ -153,33 +153,33 @@
 			"allowManualEntry": false,
 			"options": [
 				{
-					"label": "Standard operation",
+					"label": "Standard",
 					"value": 0
 				},
 				{
-					"label": "Delay ON",
+					"label": "Delay turn ON",
 					"value": 1
 				},
 				{
-					"label": "Delay OFF",
+					"label": "Delay turn OFF",
 					"value": 2
 				},
 				{
-					"label": "Auto ON",
+					"label": "Automatically turn ON",
 					"value": 3
 				},
 				{
-					"label": "Auto OFF",
+					"label": "Automatically turn OFF",
 					"value": 4
 				},
 				{
-					"label": "Flashing Mode",
+					"label": "Blink",
 					"value": 5
 				}
 			]
 		},
 		"16": {
-			"label": "Second channel - Reaction to Key S2 for Delay/Auto ON/OFF Modes",
+			"label": "Second Channel - Reaction to Key S2 for Delay/Auto ON/OFF Modes",
 			"valueSize": 1,
 			"unit": "seconds",
 			"minValue": 0,
@@ -189,22 +189,21 @@
 			"allowManualEntry": false,
 			"options": [
 				{
-					"label": "Cancel mode and set target state",
+					"label": "Cancel and set target state",
 					"value": 0
 				},
 				{
-					"label": "No reaction to switch - mode runs until it ends",
+					"label": "Ignore - mode runs until it ends",
 					"value": 1
 				},
 				{
-					"label": "Reset timer - start counting from the beginning",
+					"label": "Reset - start time from the beginning",
 					"value": 2
 				}
 			]
 		},
 		"17": {
 			"label": "Second Channel - Time Parameter for Delay/Auto ON/OFF Modes",
-			"description": "This parameter allows to set time parameter used in timed modes.",
 			"valueSize": 2,
 			"unit": "1 seconds",
 			"minValue": 0,
@@ -219,7 +218,7 @@
 			]
 		},
 		"18": {
-			"label": "Second channel - Pulse Time for Flashing Mode",
+			"label": "Second Channel - Pulse Time for Blink Mode",
 			"valueSize": 2,
 			"unit": "0.1 seconds",
 			"minValue": 1,
@@ -241,18 +240,18 @@
 					"value": 0
 				},
 				{
-					"label": "Switch (contact closed => ON and contact opened => OFF)",
+					"label": "Switch (status synced with switch position)",
 					"value": 1
 				},
 				{
-					"label": "Switch (device status changing each time switch changes)",
+					"label": "Switch (status changed when switch change)",
 					"value": 2
 				}
 			]
 		},
 		"21": {
 			"$import": "~/templates/master_template.json#base_enable_disable",
-			"label": "Report During Flashing"
+			"label": "Report During Blink"
 		},
 		"27[0x01]": {
 			"$import": "templates/fibaro_template.json#send_secure_commands_group2"

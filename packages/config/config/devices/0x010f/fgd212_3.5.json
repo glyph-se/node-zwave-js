@@ -270,7 +270,7 @@
 					"value": 1
 				},
 				{
-					"label": "Roller blind switch (UP / DOWN)",
+					"label": "Roller blind switch (up / down)",
 					"value": 2
 				}
 			]
@@ -395,7 +395,7 @@
 					"value": 1
 				},
 				{
-					"label": "Select from auto-calibration",
+					"label": "As recognized during auto-calibration",
 					"value": 2
 				}
 			]
@@ -421,7 +421,7 @@
 		},
 		"32": {
 			"label": "On/Off Mode",
-			"description": "Useful when connecting non-dimmable light sources.",
+			"description": "Useful when connecting non-dimmable loads.",
 			"valueSize": 1,
 			"minValue": 0,
 			"maxValue": 2,
@@ -430,21 +430,21 @@
 			"allowManualEntry": false,
 			"options": [
 				{
-					"label": "Disable (dimming is possible)",
+					"label": "Disable (dimming possible)",
 					"value": 0
 				},
 				{
-					"label": "Enable (dimming is not possible)",
+					"label": "Enable (dimming not possible)",
 					"value": 1
 				},
 				{
-					"label": "Select from auto-calibration",
+					"label": "As recognized during auto-calibration",
 					"value": 2
 				}
 			]
 		},
 		"33": {
-			"label": "Dimmability of the Load Recognized During Auto-Calibration",
+			"label": "Dimmability Recognized During Auto-Calibration",
 			"valueSize": 1,
 			"minValue": 0,
 			"maxValue": 1,
@@ -453,11 +453,11 @@
 			"allowManualEntry": false,
 			"options": [
 				{
-					"label": "Dimming possible",
+					"label": "Enable (dimming possible",
 					"value": 0
 				},
 				{
-					"label": "Dimming not possible",
+					"label": "Disable (dimming not possible)",
 					"value": 1
 				}
 			]

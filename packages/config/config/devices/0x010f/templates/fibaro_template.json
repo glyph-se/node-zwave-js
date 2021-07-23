@@ -81,7 +81,7 @@
 				"value": 2
 			},
 			{
-				"label": "Load blinking",
+				"label": "Blink the load",
 				"value": 3
 			}
 		]
@@ -108,7 +108,7 @@
 				"value": 2
 			},
 			{
-				"label": "Load blinking",
+				"label": "Blink the load",
 				"value": 3
 			}
 		]
@@ -135,7 +135,7 @@
 				"value": 2
 			},
 			{
-				"label": "Load blinking",
+				"label": "Blink the load",
 				"value": 3
 			}
 		]
@@ -162,7 +162,7 @@
 				"value": 2
 			},
 			{
-				"label": "Load blinking",
+				"label": "Blink the load",
 				"value": 3
 			}
 		]
